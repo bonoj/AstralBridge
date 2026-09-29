@@ -32,6 +32,39 @@ Preserve enough exact evidence of crossings that later inspection can distinguis
 
 The human may remain an unavoidable physical bridge across a browser or provider boundary. If so, make that role small, obvious, and fast.
 
+## Evidence from the first real run
+
+The first published crossing candidate has now been exercised through ten completed crossings with a continuing Google AI Mode conversation.
+
+The preserved run is in `evidence/crossings-001.json`, with the immediate finding beside it in `evidence/crossings-001.md`.
+
+That run establishes a baseline:
+
+- manual outward-and-return transport works;
+- the ledger preserves each outward message and return;
+- conversational continuity survived repeated crossings, including sparse continuation with `➡️`;
+- state and consequence accumulated across the external conversation;
+- the complete run took 12 minutes 41 seconds;
+- the last six crossings took a median 19.4 seconds from beginning to recorded return, including Google response time and human handling;
+- even a tiny continuation still requires the full copy, switch, paste, send, wait, copy, switch, paste, record routine;
+- the apparatus currently records the exchange but contributes no evolving state or behavior to it.
+
+More narrative turns through the same interaction are not useful evidence for the present bottleneck. The next executable work should materially reduce human transport burden.
+
+Do not optimize merely for removing an arbitrary click or one nominal manual step. Optimize for the experienced crossing becoming substantially less clerical.
+
+## Payload requirement
+
+The useful crossing is not limited to short text messages.
+
+Future crossings must remain compatible with carrying large heterogeneous bodies of evidence: structured and unstructured text, images, screenshots, data, executable or inspectable artifacts, archives, and combinations of these.
+
+The external product may expose useful transport affordances such as file attachments or archive handling. Investigate actual available behavior rather than assuming current limits or capabilities, and treat those affordances as candidate mechanisms rather than architecture.
+
+Do not build a generalized multimedia transport system merely because one can be imagined. But do not reduce present text friction in a way that creates a local optimum hostile to rich payloads.
+
+A crossing may ultimately be better understood as transferring a bounded parcel of evidence rather than merely sending a text message. That possibility is investigative freedom, not a required design.
+
 ## Investigative freedom
 
 Investigate the actual browser and Google AI Mode behavior available to the human.
