@@ -2,7 +2,7 @@
 
 Ten real crossings were completed against the published AstralBridge candidate built from `62f05e3b8ba7e686d336dddfeb8cef7f4df250e7`.
 
-The unaltered exported ledger is [crossings-001.json](./crossings-001.json).
+The exported ledger content is preserved in [crossings-001.json](./crossings-001.json).
 
 ## What the run established
 
@@ -26,6 +26,6 @@ The mechanism remains deliberately unspecified.
 
 ## Provenance
 
-The JSON is the apparatus export from the real run. Returns are marked `human-supplied`; AstralBridge cannot attest that pasted return text originated from Google AI Mode or that copied outward text was submitted unchanged.
+The JSON preserves the apparatus export content from the real run. Returns are marked `human-supplied`; AstralBridge cannot attest that pasted return text originated from Google AI Mode or that copied outward text was submitted unchanged.
 
 This note records the human/model observation after the run. It is interpretation beside the evidence, not part of the ledger itself.
