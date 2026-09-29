@@ -82,9 +82,17 @@ jobs:
           cp accepted/index.html index.html
           cmp --silent accepted/index.html index.html
 
+          # Sidecars are part of the same immutable candidate, never rebuilt.
+          rm -rf intake
+          if [ -d accepted/intake ]; then
+            cp -R accepted/intake intake
+            diff -qr accepted/intake intake
+          fi
+
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add index.html
+          if [ -d intake ] || git ls-files --error-unmatch intake >/dev/null 2>&1; then git add -A intake; fi
           if git diff --cached --quiet; then
             echo "Candidate is already stable."
             exit 0

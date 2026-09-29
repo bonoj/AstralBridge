@@ -26,4 +26,24 @@ The inherited `globalThis.__CRUCIBLE_BUILD__` identity and `crucible-candidate-<
 
 On 2026-09-29 UTC, the operator opened Google's public AI Mode UI and submitted a short transport probe. No answer appeared. One reload produced Google's explicit unusual-traffic block. This establishes a cloud-browser boundary, not successful model round-trip evidence or a restriction on the human's device.
 
-No API, proxy, browser extension, provider abstraction, model identity, agent loop, or orchestrator exists. A real repeated Google round trip and human assessment of transport effort remain necessary before declaring the expedition complete.
+No API, proxy, browser extension, provider abstraction, model identity, agent loop, or orchestrator exists. The human subsequently completed ten real crossings, preserved in `evidence/crossings-001.json`. The transport worked but was reported laborious. This satisfies repeated manual transfer evidence, not the low-friction finish line.
+
+## Direct-share intake probe
+
+`src/intake/` is a separate installable receiver at `/preview/intake/`. The original clipboard ledger remains separate and unchanged except for a link to this probe. No shared receipt is automatically attached to a crossing or represented as a Google reply.
+
+The manifest registers a multipart POST share target for title, text, URL and arbitrary files. The service worker intercepts its scoped `capture` endpoint, preserves fields (including repeated names) and original File blobs in IndexedDB, and redirects to the saved receipt. It awaits the write transaction before redirecting. The receiver cannot verify the sender, and a POST alone is not proof of an Android share.
+
+The receipt shows exact field values, filenames, sizes, MIME hints and SHA-256 hashes. Long text has a truncated display preview; JSON export retains its full value. Original-file download uses the stored blob. Receipt JSON excludes file bytes and says so. Links remain links: the receiver does not fetch them, scrape Google, execute HTML, unpack archives, or imply that a linked response was received. Files are opaque evidence, not supported-Google-upload claims.
+
+IndexedDB is scoped by the intake URL path so preview and future stable installations do not mix receipts. This storage is necessary for a service-worker-to-window transfer that may open a new window. Data persists until browser eviction or clearing site data; there is no remote sync or memory/personality layer. The intake UI states this storage boundary. Quota or parsing failures return an explicit error and do not acknowledge receipt.
+
+The receiver bounds a parcel at 128 MiB and 64 files; these are local protective limits, not provider limits. Original bytes remain local. Install caches the receiver shell, manifest and icons for offline opening; navigation is network-first with that shell as fallback. The worker controls only its `intake/` directory and cleans only its own scope's versioned caches.
+
+Local fixture buttons POST to a distinct `probe-capture` route and label the resulting receipts synthetic. They compare returned text and file bytes with the input after storage. They do not exercise the operating system's share chooser.
+
+## Candidate sidecars
+
+`tools/build.mjs` also produces `dist/intake/` (self-contained receiver HTML, bundled worker, manifest, icons and a synthetic ZIP fixture). The immutable candidate artifact now contains the entire `dist/` directory. Preview publication includes that full artifact. Exact-byte promotion, if authorized later, copies `index.html` plus `intake/`; Pages also includes any promoted `intake/`. The legacy stable index and promotion marker have not been changed by this probe.
+
+Installing the receiver and routing a real share from the human's Google/Android surface remain external validation boundaries. Neither desktop fixtures nor the earlier clipboard run establishes that this share path is available or sufficiently easier on the phone.

@@ -93,6 +93,7 @@ jobs:
           mkdir -p site
           test -s repo/index.html
           cp repo/index.html site/index.html
+          if [ -d repo/intake ]; then cp -R repo/intake site/intake; fi
 
       - name: Download exact candidate artifact
         if: (steps.refs.outputs.candidate_run != '' || steps.recover.outputs.run != '')

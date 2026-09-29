@@ -182,3 +182,9 @@ Authority:
 7. public live executable identity is the final serving check.
 
 That chain is deployment provenance.
+
+## AstralBridge intake sidecars (probe 02)
+
+The candidate artifact now uploads the whole `dist/` directory. It contains the original self-contained index plus `intake/`, a scoped installable share receiver. Pages downloads both into `/preview/`. Promotion copies both directly from the immutable artifact, compares their bytes, and stages the sidecars alongside the index. Stable Pages includes only promoted sidecars, if any. Never pair an accepted HTML candidate with rebuilt or unrelated service-worker assets.
+
+The manifest uses relative scope/action URLs. Preview and stable install paths therefore have separate service workers and local receipt stores. A preview installation is not silently migrated into stable by promotion.
