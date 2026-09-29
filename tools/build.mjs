@@ -13,4 +13,4 @@ shell=shell.replace("{{BUILD_COMMIT}}",commit)
   .replace("<!-- CRUCIBLE:STYLE -->",`<style>${css}</style>`)
   .replace("<!-- CRUCIBLE:SCRIPT -->",`<script>${js.outputFiles[0].text}</script>`);
 await writeFile(resolve(dist,"index.html"),shell,"utf8");
-console.log(`Built ECS Crucible dist/index.html (${Buffer.byteLength(shell)} bytes) at ${commit}`);
+console.log(`Built AstralBridge dist/index.html (${Buffer.byteLength(shell)} bytes) at ${commit}`);

@@ -1,95 +1,29 @@
 # AstralBridge Semantic Surface
 
-This surface records truths present in the current executable source at the start of the AstralBridge expedition.
+## Current crossing
 
-It is descriptive, not a design mandate. Much of this machinery is inherited and may disappear if the expedition does not need it.
+`src/main.js` operates one pending text crossing at a time. `Copy & begin crossing` freezes the exact textarea string into an outward record before attempting Clipboard API write. The recorded copy outcome is not proof that Google received a message. Re-copying does not create another crossing.
 
-## Build and release boundary
+The user switches to an independently opened Google AI Mode conversation, pastes and submits there, then copies its response back. The static apparatus neither reads Google's DOM nor automates submission. The Google link opens the public AI Mode entry point; it is not a continuation deep link. Follow-ups require switching back to the existing Google conversation.
 
-Authored browser source lives under `src/`.
+The return textarea is editable until `Record return`. `Paste response` requests clipboard read on a click, with ordinary paste as fallback. Recording retains the exact textarea string, marks its source as human-supplied, and closes the crossing. Whitespace-only outward/return values cannot begin/finish a crossing. Text is not parsed as commands, JSON, HTML, or Markdown. Ledger rendering uses `textContent`.
 
-`tools/build.mjs` bundles `src/main.js` with esbuild, inlines stylesheet and JavaScript into `src/shell.html`, embeds `GITHUB_SHA` as `globalThis.__CRUCIBLE_BUILD__`, and writes a self-contained executable to `dist/index.html`.
+Closing without a return retains outward evidence and any unrecorded return draft in the export. It does not invent a response. Crossing IDs are sequential within the tab. Begin, successful-copy, and end timestamps are distinct; each record carries its source build identity.
 
-The repository-root `index.html` is a promoted release artifact. It is not authored source.
+## Recovery and inspection
 
-The repository has working immutable candidate builds, a published `/preview/` candidate surface, exact-byte promotion, and GitHub Pages deployment. `CLONE_AND_DEPLOY.md` describes that machinery.
+A versioned JSON snapshot in `sessionStorage` holds records and current drafts. It survives ordinary same-tab reloads. It is not a durable history service; closing a tab or browser recovery behavior can lose it. Storage exceptions show a visible warning while in-memory operation continues. `Save evidence` downloads JSON containing records, drafts, and an export timestamp. It has no import or sync facility.
 
-## ECS
+The page shows separate outward and returned text in expandable crossing records. It cannot attest that pasted text originated from Google, or that copied outward text was submitted unchanged. Those boundaries are stated in the interface.
 
-`src/core/ecs.js` implements a small in-memory ECS.
+## Build and release
 
-Entity identity is an incrementing integer. Living IDs are held in a `Set`. Components are named `Map` stores from entity ID to unconstrained values.
+Authored source consists of `src/main.js`, `src/shell.html`, and `src/styles.css`. `tools/build.mjs` uses esbuild to create one self-contained `dist/index.html`; no network dependency is needed to run the apparatus. Three.js, ECS, terrain, rendering loops, and inherited world diagnostics have been removed.
 
-`world.add` requires a living entity. `world.remove` removes one component value. `world.destroy` removes the entity and its values from every component store.
+The inherited `globalThis.__CRUCIBLE_BUILD__` identity and `crucible-candidate-<sha>` artifact names remain compatible with exact-byte promotion. Root `index.html` remains the accepted stable artifact, untouched by this expedition candidate. Candidate publication is `/preview/`; promotion requires human acceptance under `EXPEDITION.md` and `CLONE_AND_DEPLOY.md`.
 
-`world.query(...components)` returns living entities present in every supplied store and begins from the smallest supplied store. A query with no components returns all living entities.
+## External evidence boundary
 
-Current component stores are created in `src/main.js`. There is no general scheduler, component schema, inheritance hierarchy, event bus, serialization layer, or entity class.
+On 2026-09-29 UTC, the operator opened Google's public AI Mode UI and submitted a short transport probe. No answer appeared. One reload produced Google's explicit unusual-traffic block. This establishes a cloud-browser boundary, not successful model round-trip evidence or a restriction on the human's device.
 
-## Frame and systems
-
-The animation frame in `src/main.js` currently runs:
-
-`physics → meteors.update → orbit.applyAll → lights.syncAll → renderSync → cameras.render`
-
-Systems are ordinary functions/modules invoked explicitly. There is no general system registry.
-
-The current physics pass handles entities carrying `Transform + Body + Gravity`, with optional `Support` terrain/apparatus settling. Its body collision vocabulary is spherical.
-
-## ECS and Three.js
-
-`Transform` is plain component data containing Three.js vectors/eulers.
-
-For entities with both `Transform` and `RenderObject`, `render-sync.js` copies ECS transform state into the referenced Three.js object each frame.
-
-Not every visible object is an ECS entity. Terrain chunks, the octagonal apparatus, optional water, and meteor trails are owned directly by their runtime code. Cameras and lights are ECS entities with realized Three.js objects stored in view components.
-
-## Terrain and inherited world
-
-`terrain-system.js` owns a dense `60 × 44 × 60` `Float32Array` scalar field spanning a fixed 3D volume.
-
-Positive values are material and negative values are empty space. The current seed function produces an initially flat surface. Polygonization uses tetrahedra and is clipped to a material octagon.
-
-Local impacts edit field samples in bounded regions and rebuild affected chunks and support data. Reset restores the captured initial field.
-
-A separate support grid caches ground heights for ordinary body settling. The terrain system also owns tests for the material octagon, apparatus footprint, apparatus-wall collision, and segment intersection.
-
-The current scene contains the terrain, octagonal apparatus, one orbiting perspective camera, three lights, fog, optional static water, and debug-triggered meteors.
-
-Water has no simulation behavior.
-
-Meteors are ECS entities while falling. Their trajectories are time-parametric. Terrain impact can edit the density field and impart impulses to ECS bodies carrying velocity.
-
-None of this world machinery is required by AstralBridge merely because it was inherited.
-
-## Camera, light, and rendering
-
-Camera state is represented by ECS components. Orbit input mutates `OrbitBehavior`; the orbit system writes camera `Transform`.
-
-The camera system realizes perspective or orthographic Three.js cameras, synchronizes projection and pose, selects an active camera, and renders through it.
-
-The light system realizes hemisphere, ambient, or directional Three.js lights and synchronizes their current values.
-
-The Three.js runtime owns the scene, WebGL renderer, resize observation, tone mapping, shadow configuration, rendering, and WebGL/shader diagnostics.
-
-## Debug and inspection
-
-Legacy inherited names remain in the current code.
-
-`globalThis.crucible` exposes `spawnMatter`, `meteor`, `groundHeight`, and `inspect`.
-
-`globalThis.crucibleDebug` exposes ECS, terrain, renderer, system, selected-entity, and water inspection.
-
-Visible debug controls expose FPS, embedded build identity, meteor controls, water visibility, terrain resynthesis, and refresh.
-
-Runtime errors, unhandled promise rejections, shader errors, WebGL context loss, and a startup watchdog feed the visible diagnostics surface.
-
-These names and controls describe current code. They do not define AstralBridge's intended interface.
-
-## Current absence
-
-At this starting point there is no AstralBridge-specific outward/return crossing implemented in authored source.
-
-There is no external-model transport abstraction, provider API integration, durable crossing ledger, identity system, memory system, agent loop, or orchestration layer.
-
-The expedition begins from that absence.
+No API, proxy, browser extension, provider abstraction, model identity, agent loop, or orchestrator exists. A real repeated Google round trip and human assessment of transport effort remain necessary before declaring the expedition complete.

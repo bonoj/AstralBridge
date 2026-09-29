@@ -1,20 +1,11 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="description" content="Crucible — a conversationally grown physical world."><title>Crucible</title>
-<!-- CRUCIBLE:STYLE --></head>
-<body><main id="world" aria-label="Crucible world. Drag to orbit; pinch or use the mouse wheel to change distance."></main>
-<aside id="mark"><b>⚗️ CRUCIBLE</b></aside>
-<aside id="debug-tools" aria-label="Construction controls">
-  <output id="fps-counter" aria-label="Frames per second">fps …</output>
-  <output id="build-id">build …</output>
-  <span id="impact-buckets" aria-label="Impact magnitude">
-    <button type="button" data-impact-bucket aria-label="Impact magnitude 1">1</button><button type="button" data-impact-bucket aria-label="Impact magnitude 2">2</button><button type="button" data-impact-bucket aria-label="Impact magnitude 3">3</button><button type="button" data-impact-bucket aria-label="Impact magnitude 4">4</button>
-  </span>
-  <button id="call-meteor" type="button" aria-label="Call meteor">☄</button>
-  <button id="toggle-water" type="button" aria-label="Toggle water">💧</button>
-  <button id="randomize-terrain" type="button" aria-label="Randomize terrain">⛰️</button>
-  <button id="debug-refresh" type="button" aria-label="Refresh">↻</button>
-</aside>
-<pre id="diagnostics" role="alert" hidden></pre>
-<script>globalThis.__CRUCIBLE_BUILD__="{{BUILD_COMMIT}}";</script>
-<!-- CRUCIBLE:SCRIPT --></body></html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="description" content="A small crossing between your browser and Google AI Mode."><title>AstralBridge</title><!-- CRUCIBLE:STYLE --></head>
+<body><main>
+<header><span class="eyebrow">OUTWARD / RETURN</span><h1>AstralBridge<span aria-hidden="true">↗</span></h1><p>A thought crosses. Something comes back.</p></header>
+<nav aria-label="Crossing steps"><span id="step">01 · Prepare</span><a href="https://www.google.com/ai" target="_blank" rel="noopener noreferrer">Open Google AI Mode ↗</a></nav>
+<section aria-labelledby="out-title"><div class="heading"><h2 id="out-title">Outward</h2><span id="number">Crossing 1</span></div><label for="outward">What do you want to send?</label><textarea id="outward" placeholder="A question, a scene, a small experiment…" rows="6"></textarea><button id="begin" class="primary">Copy & begin crossing</button><p class="hint" id="out-help">Then switch to AI Mode, paste, and send. Keep that conversation open for follow-ups.</p></section>
+<section id="return-panel" hidden aria-labelledby="return-title"><div class="heading"><h2 id="return-title">Return</h2><span>02 · Bring it back</span></div><p>Copy the response in AI Mode, then return here.</p><label for="returned">Response from AI Mode</label><textarea id="returned" rows="6" placeholder="Paste the response here…"></textarea><div class="actions"><button id="paste">Paste response</button><button id="finish" class="primary">Record return</button></div><button id="cancel" class="quiet">Close without a return</button></section>
+<p id="status" role="status" aria-live="polite">Ready for a first crossing.</p><p id="storage-warning" role="alert" hidden></p>
+<section class="evidence"><div class="heading"><h2>Crossings</h2><button id="export" class="quiet">Save evidence</button></div><p class="hint">Exact text, kept separately in this tab. Export before closing it. Copying is recorded; delivery to Google is not independently verified.</p><div id="ledger"><p class="empty">No crossings yet.</p></div></section>
+<footer><span>One conversation. Two surfaces.</span><span id="build"></span></footer>
+</main><script>globalThis.__CRUCIBLE_BUILD__="{{BUILD_COMMIT}}";</script><!-- CRUCIBLE:SCRIPT --></body></html>
