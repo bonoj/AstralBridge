@@ -1,0 +1,128 @@
+{
+  "version": 1,
+  "records": [
+    {
+      "id": 1,
+      "outward": "You are the other side of a small experimental bridge.\n\nReply with exactly two sentences: first, describe what you think just crossed the bridge; second, leave one thing worth carrying back across it.",
+      "status": "returned",
+      "beganAt": "2026-09-29T03:48:02.054Z",
+      "build": "62f05e3b8ba7e686d336dddfeb8cef7f4df250e7",
+      "copyMethod": "clipboard",
+      "copiedAt": "2026-09-29T03:49:51.939Z",
+      "returned": "A sudden, deliberate weight just pressed into the boards, shifting like a curious mind leaning forward into the dark. I leave you with a smooth, river-worn stone that holds the day's last heat, small enough to fit inside your palm.\n",
+      "endedAt": "2026-09-29T03:51:45.851Z",
+      "returnSource": "human-supplied"
+    },
+    {
+      "id": 2,
+      "outward": "The stone made it across. It is still warm.\n\nWhat do you notice on your side of the bridge?",
+      "status": "returned",
+      "beganAt": "2026-09-29T03:52:26.554Z",
+      "build": "62f05e3b8ba7e686d336dddfeb8cef7f4df250e7",
+      "copyMethod": "clipboard",
+      "copiedAt": "2026-09-29T03:52:26.562Z",
+      "returned": "On this side, the air smells sharply of ozone and crushed mint, as if the space itself is vibrating with the effort of our connection. The heavy mist has pulled back just enough to reveal a low, pulsing circle of pale blue light where the old timber meets the dark earth—hummed completely awake by the stone’s safe passage. Even the shadows are misbehaving now, pointing directly toward the center of the span rather than away from the moon.\nShould we try sending something else across to see if the blue light reacts, or do you want to step closer to examine the alignment of the shadows?\n",
+      "endedAt": "2026-09-29T03:53:12.012Z",
+      "returnSource": "human-supplied"
+    },
+    {
+      "id": 3,
+      "outward": "Send something else across.",
+      "status": "returned",
+      "beganAt": "2026-09-29T03:54:02.948Z",
+      "build": "62f05e3b8ba7e686d336dddfeb8cef7f4df250e7",
+      "copyMethod": "clipboard",
+      "copiedAt": "2026-09-29T03:54:02.955Z",
+      "returned": "A small, tightly furled scroll made of birch bark has just rolled onto your side of the boards, tied securely with a blade of green grass. Inside, it holds the blueprint of a constellation that doesn't belong to our sky, drawn in a charcoal that faintly smudges when touched.\n",
+      "endedAt": "2026-09-29T03:55:26.745Z",
+      "returnSource": "human-supplied"
+    },
+    {
+      "id": 4,
+      "outward": "The scroll made it across.\n\n➡️",
+      "status": "returned",
+      "beganAt": "2026-09-29T03:55:37.514Z",
+      "build": "62f05e3b8ba7e686d336dddfeb8cef7f4df250e7",
+      "copyMethod": "clipboard",
+      "copiedAt": "2026-09-29T03:55:37.525Z",
+      "returned": "A heavy, rhythmic hum has settled into the timbers, as if the bridge itself is breathing in sync with your side of the river. I leave you with a small vial of clear water that remains perfectly still, entirely unaffected by the swaying of the bridge or the motion of your hands.\n",
+      "endedAt": "2026-09-29T03:56:11.688Z",
+      "returnSource": "human-supplied"
+    },
+    {
+      "id": 5,
+      "outward": "➡️",
+      "status": "returned",
+      "beganAt": "2026-09-29T03:56:28.226Z",
+      "build": "62f05e3b8ba7e686d336dddfeb8cef7f4df250e7",
+      "copyMethod": "clipboard",
+      "copiedAt": "2026-09-29T03:56:28.239Z",
+      "returned": "The faint echo of a silver bell just chimed across the wood, vibrating through the planks long after the sound itself faded away. I leave you with a single, perfectly dry autumn leaf that slowly cycles through shades of deep amber and crimson while you hold it.\n",
+      "endedAt": "2026-09-29T03:56:47.691Z",
+      "returnSource": "human-supplied"
+    },
+    {
+      "id": 6,
+      "outward": "Look back.\n\n➡️",
+      "status": "returned",
+      "beganAt": "2026-09-29T03:57:05.729Z",
+      "build": "62f05e3b8ba7e686d336dddfeb8cef7f4df250e7",
+      "copyMethod": "clipboard",
+      "copiedAt": "2026-09-29T03:57:05.733Z",
+      "returned": "A sudden, breath-stealing draft just swept past, carrying the brief smell of rain on hot stone as if a door had opened and shut behind me. I look back to find that the blue light is gone, replaced by a perfectly mirrored reflection of your own shoreline stretching out into the dark.\n",
+      "endedAt": "2026-09-29T03:57:31.533Z",
+      "returnSource": "human-supplied"
+    },
+    {
+      "id": 7,
+      "outward": "I step closer.\n\n➡️",
+      "status": "returned",
+      "beganAt": "2026-09-29T03:58:03.433Z",
+      "build": "62f05e3b8ba7e686d336dddfeb8cef7f4df250e7",
+      "copyMethod": "clipboard",
+      "copiedAt": "2026-09-29T03:58:03.444Z",
+      "returned": "The reflection on the water didn't ripple as you approached, but instead held your image perfectly still, waiting for you to match its stance. I leave you with a small iron key that feels unusually cold, heavy with the sudden certainty that it opens something on your side of the water.\n",
+      "endedAt": "2026-09-29T03:58:18.961Z",
+      "returnSource": "human-supplied"
+    },
+    {
+      "id": 8,
+      "outward": "I take the key and look around my side for what it might open.\n\n➡️",
+      "status": "returned",
+      "beganAt": "2026-09-29T03:58:42.323Z",
+      "build": "62f05e3b8ba7e686d336dddfeb8cef7f4df250e7",
+      "copyMethod": "clipboard",
+      "copiedAt": "2026-09-29T03:58:42.326Z",
+      "returned": "A sharp, magnetic pull just rippled through the wood, momentarily drawing the iron key in your hand directly toward the planks beneath your feet. I leave you with a shallow wooden bowl filled with a fine, silver sand that slowly shifts on its own, pooling toward whichever direction you choose to walk next.\n",
+      "endedAt": "2026-09-29T03:59:18.195Z",
+      "returnSource": "human-supplied"
+    },
+    {
+      "id": 9,
+      "outward": "I kneel and bring the key close to the plank that pulled it.\n\n➡️",
+      "status": "returned",
+      "beganAt": "2026-09-29T03:59:43.397Z",
+      "build": "62f05e3b8ba7e686d336dddfeb8cef7f4df250e7",
+      "copyMethod": "clipboard",
+      "copiedAt": "2026-09-29T03:59:43.409Z",
+      "returned": "A small, seamless keyhole just opened in the grain of the wood, its edges glowing with a faint, amber warmth as the iron key drew near. I leave you with a single brass needle that continuously spins toward you, no matter which way the bridge or the shorelines twist.\n",
+      "endedAt": "2026-09-29T03:59:56.486Z",
+      "returnSource": "human-supplied"
+    },
+    {
+      "id": 10,
+      "outward": "I put the key into the keyhole and turn it.\n\n➡️",
+      "status": "returned",
+      "beganAt": "2026-09-29T04:00:23.522Z",
+      "build": "62f05e3b8ba7e686d336dddfeb8cef7f4df250e7",
+      "copyMethod": "clipboard",
+      "copiedAt": "2026-09-29T04:00:23.533Z",
+      "returned": "A deep, unlocking click vibrated through the riverbed, causing the mirrored shoreline behind you to fracture into a thousand quiet ripples. I leave you with a smooth piece of dark sea glass that allows you to see the true night sky right through the reflection when held up to your eye.\n",
+      "endedAt": "2026-09-29T04:00:42.807Z",
+      "returnSource": "human-supplied"
+    }
+  ],
+  "draft": "",
+  "returned": "",
+  "exportedAt": "2026-09-29T04:02:21.181Z"
+}
